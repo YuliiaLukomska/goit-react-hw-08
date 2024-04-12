@@ -10,10 +10,10 @@ import { Routes, Route } from "react-router-dom";
 // import Registration from "./pages/Registration";
 // import Login from "./pages/Login";
 // import Contacts from "./pages/Contacts";
-const Home = lazy(() => import("./pages/Home"));
-const Registration = lazy(() => import("./pages/Registration"));
-const Login = lazy(() => import("./pages/Login"));
-const Contacts = lazy(() => import("./pages/Contacts"));
+const HomePage = lazy(() => import("./pages/HomePage"));
+const RegistrationPage = lazy(() => import("./pages/RegistrationPage"));
+const LoginPage = lazy(() => import("./pages/LoginPage"));
+const ContactsPage = lazy(() => import("./pages/ContactsPage"));
 
 function App() {
   const dispatch = useDispatch();
@@ -30,10 +30,10 @@ function App() {
       <ContactList />
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Registration />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
         </Routes>
       </Layout>
     </div>

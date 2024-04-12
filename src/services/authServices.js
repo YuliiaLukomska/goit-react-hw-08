@@ -10,6 +10,7 @@ export const setToken = (token) => {
 
 export const requestUserSignUp = async (formData) => {
   const { data } = await instance.post("/users/signup", formData);
+  setToken(data.token);
   return data;
 };
 
