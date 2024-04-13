@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";
 import { refreshUser } from "./redux/auth/operations";
 import { selectIsRefreshing } from "./redux/auth/selectors";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 // import Home from "./pages/Home";
 // import Registration from "./pages/Registration";
 // import Login from "./pages/Login";
@@ -17,6 +18,11 @@ const HomePage = lazy(() => import("./pages/HomePage"));
 const RegistrationPage = lazy(() => import("./pages/RegistrationPage"));
 const LoginPage = lazy(() => import("./pages/LoginPage"));
 const ContactsPage = lazy(() => import("./pages/ContactsPage"));
+/**Виходить, що неавторизованому користувачу будуть доступні всі маршрути, окрім КонтактсПейдж (КонтактсПейдж має приватний маршрут), а сторінки
+ * Реєстрації та Логінізвції мають обмеження (Викор RestrictedRoute) - коли користувач зареєстрований, то він не може перейти на сторінку логіну чи
+ *  реєстрації. Для цього йому треба вийти з акаунту. Коли користувач перебуваючи на сторінці Контактів (url:/contacts) клацне LogOut, то
+ * стан обнулиться, і користувач стане незалогованим і відповідно isLoggedIn = false і спрацює Navigate to='/login'
+ */
 
 function App() {
   const dispatch = useDispatch();
@@ -52,7 +58,12 @@ function App() {
             <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
           }
         />
-        <Route path="/contacts" element={<ContactsPage />} />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute component={<ContactsPage />} redirectTo="/login" />
+          }
+        />
       </Routes>
     </Layout>
   );
