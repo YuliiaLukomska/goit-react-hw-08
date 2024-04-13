@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { login, refreshUser, register } from "./operations";
-import { act } from "react-dom/test-utils";
 
 const INITIAL_STATE = {
   user: {
