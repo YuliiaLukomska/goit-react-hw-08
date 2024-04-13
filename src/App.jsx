@@ -6,6 +6,7 @@ import { fetchContacts } from "./redux/contacts/operations";
 import { lazy, useEffect } from "react";
 import Layout from "./Layout";
 import { Routes, Route } from "react-router-dom";
+import { refreshUser } from "./redux/auth/operations";
 // import Home from "./pages/Home";
 // import Registration from "./pages/Registration";
 // import Login from "./pages/Login";
@@ -20,6 +21,10 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchContacts());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(refreshUser());
   }, [dispatch]);
 
   return (

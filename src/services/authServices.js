@@ -16,6 +16,8 @@ export const requestUserSignUp = async (formData) => {
 
 export const requestUserLogIn = async (formData) => {
   const { data } = await instance.post("/users/login", formData);
+  // кладемо інстансу в заголовки цей токен. Щоб при наступному запиті цей токен вже там був.
+  setToken(data.token);
   return data;
 };
 
