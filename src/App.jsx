@@ -8,6 +8,7 @@ import Layout from "./Layout";
 import { Routes, Route } from "react-router-dom";
 import { refreshUser } from "./redux/auth/operations";
 import { selectIsRefreshing } from "./redux/auth/selectors";
+import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 // import Home from "./pages/Home";
 // import Registration from "./pages/Registration";
 // import Login from "./pages/Login";
@@ -36,8 +37,21 @@ function App() {
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/register" element={<RegistrationPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute
+              redirectTo="/contacts"
+              component={<RegistrationPage />}
+            />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+          }
+        />
         <Route path="/contacts" element={<ContactsPage />} />
       </Routes>
     </Layout>
