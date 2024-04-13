@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList/ContactList";
 import SearchBox from "./components/SearchBox/SearchBox";
@@ -7,6 +7,7 @@ import { lazy, useEffect } from "react";
 import Layout from "./Layout";
 import { Routes, Route } from "react-router-dom";
 import { refreshUser } from "./redux/auth/operations";
+import { selectIsRefreshing } from "./redux/auth/selectors";
 // import Home from "./pages/Home";
 // import Registration from "./pages/Registration";
 // import Login from "./pages/Login";
@@ -18,6 +19,8 @@ const ContactsPage = lazy(() => import("./pages/ContactsPage"));
 
 function App() {
   const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
+  console.log(isRefreshing);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -27,21 +30,17 @@ function App() {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
-    <div>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <SearchBox />
-      <ContactList />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/register" element={<RegistrationPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
-        </Routes>
-      </Layout>
-    </div>
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
+    <Layout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/register" element={<RegistrationPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
+      </Routes>
+    </Layout>
   );
 }
 
