@@ -4,6 +4,7 @@ import {
   deleteContact,
   fetchContacts,
 } from "../contacts/operations";
+import { logout } from "../auth/operations";
 
 const INITIAL_STATE = {
   items: [],
@@ -27,6 +28,12 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.loading = false;
         state.items = state.items.filter((item) => item.id !== action.payload);
+      })
+      .addCase(logout.fulfilled, (state) => {
+        // при логауті чистимо колекцію контактів. Операцію логауту імпортуємо з операцій auth->operations
+        state.items = [];
+        state.loading = false;
+        state.error = null;
       })
       .addMatcher(
         isAnyOf(
