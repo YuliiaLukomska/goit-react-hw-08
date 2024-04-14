@@ -4,7 +4,7 @@ import css from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 
-const FeedbackSchema = Yup.object().shape({
+const ContactSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, "Too Short!")
     .max(50, "Too Long")
@@ -15,7 +15,7 @@ const FeedbackSchema = Yup.object().shape({
     .required("Required"),
 });
 
-const initialValues = {
+const INITIAL_FORM_DATA = {
   name: "",
   number: "",
 };
@@ -25,30 +25,34 @@ const ContactForm = () => {
 
   const handleSubmit = (data, formActions) => {
     dispatch(addContact(data));
-
     formActions.resetForm();
   };
 
   return (
     <Formik
-      initialValues={initialValues}
+      initialValues={INITIAL_FORM_DATA}
       onSubmit={handleSubmit}
-      validationSchema={FeedbackSchema}
+      validationSchema={ContactSchema}
     >
       <Form className={css.formWrapper}>
         <label className={css.formLabel}>
           Name
-          <Field name="name" type="text" />
+          <Field name="name" type="text" placeholder="Maria Moroz" />
           <ErrorMessage name="name" component="span" className={css.error} />
         </label>
         <label className={css.formLabel}>
           Number
-          <Field name="number" type="text" />
+          <Field name="number" type="text" placeholder="+(38)0631234567" />
           <ErrorMessage name="number" component="span" className={css.error} />
         </label>
 
-        <button className={css.formBtn} type="submit">
-          Add contact
+        <button
+          className={css.formBtn}
+          type="submit"
+          title="Click to create new contact"
+          aria-label="Add new contact"
+        >
+          Add new contact
         </button>
       </Form>
     </Formik>

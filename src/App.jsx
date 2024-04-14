@@ -1,8 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import ContactForm from "./components/ContactForm/ContactForm";
-import ContactList from "./components/ContactList/ContactList";
-import SearchBox from "./components/SearchBox/SearchBox";
-import { fetchContacts } from "./redux/contacts/operations";
 import { lazy, useEffect } from "react";
 import Layout from "./Layout";
 import { Routes, Route } from "react-router-dom";
@@ -10,14 +6,11 @@ import { refreshUser } from "./redux/auth/operations";
 import { selectIsRefreshing } from "./redux/auth/selectors";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-// import Home from "./pages/Home";
-// import Registration from "./pages/Registration";
-// import Login from "./pages/Login";
-// import Contacts from "./pages/Contacts";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const RegistrationPage = lazy(() => import("./pages/RegistrationPage"));
 const LoginPage = lazy(() => import("./pages/LoginPage"));
 const ContactsPage = lazy(() => import("./pages/ContactsPage"));
+
 /**Виходить, що неавторизованому користувачу будуть доступні всі маршрути, окрім КонтактсПейдж (КонтактсПейдж має приватний маршрут), а сторінки
  * Реєстрації та Логінізвції мають обмеження (Викор RestrictedRoute) - коли користувач зареєстрований, то він не може перейти на сторінку логіну чи
  *  реєстрації. Для цього йому треба вийти з акаунту. Коли користувач перебуваючи на сторінці Контактів (url:/contacts) клацне LogOut, то
@@ -27,11 +20,6 @@ const ContactsPage = lazy(() => import("./pages/ContactsPage"));
 function App() {
   const dispatch = useDispatch();
   const isRefreshing = useSelector(selectIsRefreshing);
-  console.log(isRefreshing);
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
 
   useEffect(() => {
     dispatch(refreshUser());
