@@ -4,6 +4,7 @@ import ContactList from "../components/ContactList/ContactList";
 import { useEffect } from "react";
 import { fetchContacts } from "../redux/contacts/operations";
 import SearchBox from "../components/SearchBox/SearchBox";
+import DocumentTitle from "../DocumentTitle";
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -14,6 +15,7 @@ const Contacts = () => {
 
   return (
     <>
+      <DocumentTitle>Your contacts</DocumentTitle>
       <h1>Your contacts</h1>
       <SearchBox />
       <ContactForm />
