@@ -4,6 +4,7 @@
   border: black solid 1px;
   border-radius: 8px;
   padding: 8px;
+  margin: 0 auto;
   margin-bottom: 15px;
 }
 .formLabel {

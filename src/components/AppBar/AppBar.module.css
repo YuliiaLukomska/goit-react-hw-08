@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  border: solid black 1px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}

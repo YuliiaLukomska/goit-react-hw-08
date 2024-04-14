@@ -42,7 +42,7 @@ const ContactForm = () => {
         </label>
         <label className={css.formLabel}>
           Number
-          <Field name="number" type="text" placeholder="+(38)0631234567" />
+          <Field name="number" type="text" placeholder="+(380)631234567" />
           <ErrorMessage name="number" component="span" className={css.error} />
         </label>
 

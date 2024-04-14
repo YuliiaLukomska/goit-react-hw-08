@@ -48,9 +48,14 @@ thunkAPI є метод getState який поверне весь стейт до
 export const refreshUser = createAsyncThunk(
   "auth/refresh",
   async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const token = state.auth.token;
+    if (token === null) {
+      /* If there is no token (а це відбувається тоді, коли ти виходиш з акаунту і на сторінці логіну/реєстрації 
+      обновлюєш/перезавантажуєш сторінку. Тобто робиш рефрешинг - запит по токену, а токена нема, бо ти розлогінився), exit without performing any request*/
+      return thunkAPI.rejectWithValue("Unable to fetch user");
+    }
     try {
-      const state = thunkAPI.getState();
-      const token = state.auth.token;
       setToken(token);
       const data = await requestGetCurrentUser();
 

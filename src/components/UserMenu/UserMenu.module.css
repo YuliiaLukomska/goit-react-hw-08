@@ -1,0 +1,10 @@
+.userMenuWrapper {
+  display: flex;
+  gap: 20px;
+}
+.userMenuWelcome {
+  font-style: italic;
+}
+.userMenuUserName {
+  color: indianred;
+}
