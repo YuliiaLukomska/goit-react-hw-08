@@ -8,3 +8,9 @@
 .userMenuUserName {
   color: indianred;
 }
+.logOutButton {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,12 +1,11 @@
 import css from "./Contact.module.css";
 import { IoPersonSharp } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
-import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contacts/operations";
+import DeleteModal from "../DeleteModal/DeleteModal";
+import { useState } from "react";
 
 const Contact = ({ data: { name, number, id } }) => {
-  const dispatch = useDispatch();
-  const handleDelete = () => dispatch(deleteContact(id));
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
   return (
     <div className={css.contactItem}>
@@ -20,9 +19,19 @@ const Contact = ({ data: { name, number, id } }) => {
           {number}
         </p>
       </div>
-      <button className={css.contactBtn} onClick={handleDelete}>
+      <button
+        className={css.contactBtn}
+        onClick={() => setIsDeleteModalOpen(true)}
+      >
         Delete
       </button>
+      <DeleteModal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        contactId={id}
+      >
+        <p>Are you sure you want to delete the contact?</p>
+      </DeleteModal>
     </div>
   );
 };
