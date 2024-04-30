@@ -20,6 +20,6 @@ export const updateContact = async (contactInfo) => {
     `/contacts/${contactInfo.id}`,
     contactInfo.data
   );
-  console.log(data);
+
   return data;
 };

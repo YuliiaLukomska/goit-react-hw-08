@@ -5,6 +5,9 @@
   border-radius: 8px;
   padding: 8px;
   margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .formLabel {
   display: flex;
@@ -12,11 +15,23 @@
   margin-bottom: 10px;
 }
 .formBtn {
-  display: block;
-  margin: 0 auto;
-  height: 30px;
-  border: black solid 1px;
+  width: 100px;
+  height: 40px;
+  background-color: #ff6700;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+  filter: drop-shadow(0 0 7px rgba(255, 103, 0, 0.3));
+  transition: background-color 0.3s;
+}
+
+.formBtn:hover {
+  background-color: #c24e00;
 }
 .error {
   color: red;
+}
+.formInput {
+  padding: 10px;
+  width: 280px;
 }

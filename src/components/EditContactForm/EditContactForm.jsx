@@ -12,7 +12,6 @@ const EditContactForm = ({ name, number, contactId, onClose }) => {
 
   const dispatch = useDispatch();
   const handleSubmit = (data) => {
-    console.log(data);
     const contactInfo = {
       id: contactId,
       data: data,
@@ -30,12 +29,22 @@ const EditContactForm = ({ name, number, contactId, onClose }) => {
       <Form className={css.formWrapper}>
         <label className={css.formLabel}>
           Name
-          <Field name="name" type="text" placeholder="Maria Moroz" />
+          <Field
+            name="name"
+            type="text"
+            placeholder="Maria Moroz"
+            className={css.formInput}
+          />
           <ErrorMessage name="name" component="span" className={css.error} />
         </label>
         <label className={css.formLabel}>
           Number
-          <Field name="number" type="text" placeholder="+(380)631234567" />
+          <Field
+            name="number"
+            type="text"
+            placeholder="+(380)631234567"
+            className={css.formInput}
+          />
           <ErrorMessage name="number" component="span" className={css.error} />
         </label>
 

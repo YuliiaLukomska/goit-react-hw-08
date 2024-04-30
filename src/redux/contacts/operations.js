@@ -53,7 +53,7 @@ export const patchContact = createAsyncThunk(
     try {
       const data = await updateContact(contactInfo);
       toast("Your contact has been successfully edited!");
-      console.log(data);
+
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

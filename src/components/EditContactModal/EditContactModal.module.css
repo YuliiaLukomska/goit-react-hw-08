@@ -33,23 +33,6 @@
   transition: transform 0.3s;
 }
 
-.modalContent p {
-  font-size: 18px;
-  text-align: center;
-  margin-bottom: 30px;
-}
-.modalContent--after-open {
-  transform: translateY(0);
-}
-
-.modalContent--before-close {
-  transform: translateY(50px);
-}
-
-.modalButtons {
-  display: flex;
-  gap: 80px;
-}
 .modaleCloseButton {
   position: absolute;
   top: 20px;
