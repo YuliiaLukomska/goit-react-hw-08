@@ -5,7 +5,9 @@
   display: flex;
   gap: 30px;
   align-items: center;
-  width: 100%;
+  flex-basis: calc((100% - 80px) / 4);
+  justify-content: space-between;
+  height: 100px;
 }
 .icon {
   margin-right: 8px;
@@ -13,4 +15,9 @@
 .contactBtn {
   height: 30px;
   border: black solid 1px;
+}
+.contactButtonsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }

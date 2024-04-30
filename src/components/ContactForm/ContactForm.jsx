@@ -6,7 +6,7 @@ import { addContact } from "../../redux/contacts/operations";
 import toast, { Toaster } from "react-hot-toast";
 import { selectContacts } from "../../redux/contacts/selectors";
 
-const ContactSchema = Yup.object().shape({
+export const ContactSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, "Too Short!")
     .max(50, "Too Long")

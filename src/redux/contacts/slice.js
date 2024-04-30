@@ -3,6 +3,7 @@ import {
   addContact,
   deleteContact,
   fetchContacts,
+  patchContact,
 } from "../contacts/operations";
 import { logout } from "../auth/operations";
 
@@ -29,6 +30,16 @@ const contactsSlice = createSlice({
         state.loading = false;
         state.items = state.items.filter((item) => item.id !== action.payload);
       })
+      .addCase(patchContact.fulfilled, (state, action) => {
+        state.loading = false;
+        const index = state.items.findIndex(
+          (item) => item.id === action.payload.id
+        );
+        if (index !== -1) {
+          state.items[index].name = action.payload.name;
+          state.items[index].number = action.payload.number;
+        }
+      })
       .addCase(logout.fulfilled, (state) => {
         // при логауті чистимо колекцію контактів. Операцію логауту імпортуємо з операцій auth->operations
         state.items = [];
@@ -39,7 +50,8 @@ const contactsSlice = createSlice({
         isAnyOf(
           fetchContacts.pending,
           addContact.pending,
-          deleteContact.pending
+          deleteContact.pending,
+          patchContact.pending
         ),
         (state) => {
           state.loading = true;
@@ -50,7 +62,8 @@ const contactsSlice = createSlice({
         isAnyOf(
           fetchContacts.rejected,
           addContact.rejected,
-          deleteContact.rejected
+          deleteContact.rejected,
+          patchContact.rejected
         ),
         (state) => {
           state.loading = false;

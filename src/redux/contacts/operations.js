@@ -4,6 +4,7 @@ import {
   getContacts,
   postContact,
   removeContact,
+  updateContact,
 } from "../../services/contactsServices";
 import toast from "react-hot-toast";
 
@@ -39,6 +40,20 @@ export const deleteContact = createAsyncThunk(
     try {
       const data = await removeContact(contactId);
       toast("Your contact has been successfully deleted!");
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const patchContact = createAsyncThunk(
+  "contacts/patchContact",
+  async (contactInfo, thunkAPI) => {
+    try {
+      const data = await updateContact(contactInfo);
+      toast("Your contact has been successfully edited!");
+      console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
