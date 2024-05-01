@@ -11,32 +11,34 @@ const Contact = ({ data: { name, number, id } }) => {
   const [isEditContactModalOpen, setIsEditContactModalOpen] = useState(false);
 
   return (
-    <div className={css.contactItem}>
-      <div className={css.contactInfo}>
-        <p>
-          <IoPersonSharp className={css.icon} />
-          {name}
-        </p>
-        <p>
-          <FaPhoneAlt className={css.icon} />
-          {number}
-        </p>
-      </div>
-      <div className={css.contactButtonsWrapper}>
-        <button
-          type="button"
-          className={css.contactBtn}
-          onClick={() => setIsEditContactModalOpen(true)}
-        >
-          Edit
-        </button>
-        <button
-          className={css.contactBtn}
-          onClick={() => setIsDeleteModalOpen(true)}
-          type="button"
-        >
-          Delete
-        </button>
+    <>
+      <div className={css.contactItem}>
+        <div>
+          <p className={css.contactData}>
+            <IoPersonSharp className={css.icon} />
+            {name}
+          </p>
+          <p className={css.contactData}>
+            <FaPhoneAlt className={css.icon} />
+            {number}
+          </p>
+        </div>
+        <div className={css.contactButtonsWrapper}>
+          <button
+            type="button"
+            className={css.contactBtn}
+            onClick={() => setIsEditContactModalOpen(true)}
+          >
+            Edit
+          </button>
+          <button
+            className={css.contactBtn}
+            onClick={() => setIsDeleteModalOpen(true)}
+            type="button"
+          >
+            Delete
+          </button>
+        </div>
       </div>
 
       <DeleteModal
@@ -57,7 +59,7 @@ const Contact = ({ data: { name, number, id } }) => {
           onClose={() => setIsEditContactModalOpen(false)}
         />
       </EditContactModal>
-    </div>
+    </>
   );
 };
 

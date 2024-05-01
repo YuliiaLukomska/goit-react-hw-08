@@ -9,6 +9,8 @@ import {
 
 import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
+import Grid from "../Grid/Grid";
+import GridItem from "../GridItem/GridItem";
 
 const ContactList = () => {
   const visibleContacts = useSelector(selectFilteredContacts);
@@ -19,14 +21,14 @@ const ContactList = () => {
     <>
       {isLoading && <Loader />}
       {isError && <Error />}
-      <ul className={css.contactListWrapper}>
+      <Grid>
         {visibleContacts.length > 0 &&
           visibleContacts.map((contact) => (
-            <li key={contact.id}>
+            <GridItem key={contact.id}>
               <Contact data={contact} />
-            </li>
+            </GridItem>
           ))}
-      </ul>
+      </Grid>
     </>
   );
 };
