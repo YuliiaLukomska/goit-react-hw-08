@@ -17,7 +17,7 @@ const UserMenu = () => {
         Welcome, <span className={css.userMenuUserName}>{user.name}</span> !
       </p>
       <button onClick={onLogOut} type="button" className={css.logOutButton}>
-        <IoIosLogOut />
+        <IoIosLogOut size="24px" />
       </button>
     </div>
   );

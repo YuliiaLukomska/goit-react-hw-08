@@ -1,5 +1,8 @@
+@import url("./assets/fonts/fonts.css");
+
 body {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #dadada;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.5;
 
   font-synthesis: none;

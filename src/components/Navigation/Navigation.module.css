@@ -1,4 +1,11 @@
-.NavigationWrapper {
+.navigationWrapper {
   display: flex;
-  gap: 20px;
+  gap: 40px;
+}
+
+.headerLink {
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
