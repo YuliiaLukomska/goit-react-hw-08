@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <DocumentTitle>Welcome Page</DocumentTitle>
-      <div className={css.container}>
+      <div className={css.homeSection}>
         <h1 className={css.title}>
           Contacts manager welcome page
           <span role="img" aria-label="Greeting icon">

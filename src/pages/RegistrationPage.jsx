@@ -1,12 +1,13 @@
 import DocumentTitle from "../DocumentTitle";
 import RegistrationForm from "../components/RegistrationForm/RegistrationForm";
+import Section from "../components/Section/Section";
 
 const Registration = () => {
   return (
-    <div>
+    <Section>
       <DocumentTitle>Registration</DocumentTitle>
       <RegistrationForm />
-    </div>
+    </Section>
   );
 };
 

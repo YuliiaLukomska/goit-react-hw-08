@@ -11,6 +11,5 @@
   }
   @media (1440px<=width) {
     max-width: 1440px;
-    padding: 0 112px;
   }
 }

@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import AppBar from "./components/AppBar/AppBar";
 import Container from "./components/Container/Container";
-import Section from "./components/Section/Section";
+
 // import Section from "./components/Section/Section";
 // import Container from "./components/Container/Container";
 
@@ -11,11 +11,9 @@ const Layout = ({ children }) => {
     <>
       <AppBar />
       <main>
-        <Section>
-          <Container>
-            <Suspense fallback={null}>{children}</Suspense>{" "}
-          </Container>
-        </Section>
+        <Container>
+          <Suspense fallback={null}>{children}</Suspense>
+        </Container>
       </main>
     </>
   );

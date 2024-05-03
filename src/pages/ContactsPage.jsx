@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { fetchContacts } from "../redux/contacts/operations";
 import SearchBox from "../components/SearchBox/SearchBox";
 import DocumentTitle from "../DocumentTitle";
+import Section from "../components/Section/Section";
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -14,13 +15,13 @@ const Contacts = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <Section>
       <DocumentTitle>Your contacts</DocumentTitle>
       <h1>Your contacts</h1>
       <SearchBox />
       <ContactForm />
       <ContactList />
-    </>
+    </Section>
   );
 };
 

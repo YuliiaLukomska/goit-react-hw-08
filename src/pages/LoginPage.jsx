@@ -1,12 +1,13 @@
 import DocumentTitle from "../DocumentTitle";
 import LoginForm from "../components/LoginForm/LoginForm";
+import Section from "../components/Section/Section";
 
 const Login = () => {
   return (
-    <div>
+    <Section>
       <DocumentTitle>Login Page</DocumentTitle>
       <LoginForm />
-    </div>
+    </Section>
   );
 };
 
