@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import css from "./RegistrationForm.module.css";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
+import { NavLink } from "react-router-dom";
 
 const INITIAL_FORM_DATA = {
   name: "",
@@ -32,37 +33,61 @@ const RegistrationForm = () => {
   };
 
   return (
-    <Formik
-      initialValues={INITIAL_FORM_DATA}
-      onSubmit={handleSubmit}
-      validationSchema={UserRegisterSchema}
-    >
-      <Form className={css.formWrapper}>
-        <label className={css.formLabel}>
-          Name
-          <Field name="name" type="text" />
-          <ErrorMessage name="name" component="span" className={css.error} />
-        </label>
-        <label className={css.formLabel}>
-          Email
-          <Field name="email" type="text" />
-          <ErrorMessage name="email" component="span" className={css.error} />
-        </label>
-        <label className={css.formLabel}>
-          Password
-          <Field name="password" type="password" />
-          <ErrorMessage
-            name="password"
-            component="span"
-            className={css.error}
-          />
-        </label>
+    <div className={css.formWrapper}>
+      <h2 className={css.signUpTitle}>Sign Up</h2>
+      <p className={css.signUpParagraph}>
+        Create an account to enjoy all the services!
+      </p>
+      <Formik
+        initialValues={INITIAL_FORM_DATA}
+        onSubmit={handleSubmit}
+        validationSchema={UserRegisterSchema}
+      >
+        <Form>
+          <label className={css.formLabel}>
+            <Field
+              name="name"
+              type="text"
+              placeholder="Enter your name"
+              className={css.formInput}
+            />
+            <ErrorMessage name="name" component="span" className={css.error} />
+          </label>
+          <label className={css.formLabel}>
+            <Field
+              name="email"
+              type="text"
+              placeholder="Enter your email"
+              className={css.formInput}
+            />
+            <ErrorMessage name="email" component="span" className={css.error} />
+          </label>
+          <label className={css.formLabel}>
+            <Field
+              name="password"
+              type="password"
+              placeholder="Password"
+              className={css.formInput}
+            />
+            <ErrorMessage
+              name="password"
+              component="span"
+              className={css.error}
+            />
+          </label>
 
-        <button className={css.formBtn} type="submit">
-          Sing Up
-        </button>
-      </Form>
-    </Formik>
+          <button className={css.formBtn} type="submit">
+            Create Account
+          </button>
+        </Form>
+      </Formik>
+      <p className={css.formClarificationParagraph}>
+        Already have an Account?{" "}
+        <NavLink to="/login">
+          <span className={css.logInSpan}>Log In</span>
+        </NavLink>{" "}
+      </p>
+    </div>
   );
 };
 

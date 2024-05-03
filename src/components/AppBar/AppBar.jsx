@@ -5,6 +5,8 @@ import { selectIsLoggedIn } from "../../redux/auth/selectors";
 import UserMenu from "../UserMenu/UserMenu";
 import css from "./AppBar.module.css";
 import Container from "../Container/Container";
+import { NavLink } from "react-router-dom";
+import { TiContacts } from "react-icons/ti";
 
 const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -12,10 +14,16 @@ const AppBar = () => {
   return (
     <header className={css.header}>
       <Container>
-        <div className={css.appBarWrapper}>
-          <Navigation />
-          {isLoggedIn ? <UserMenu /> : <AuthNav />}
-        </div>
+        <nav>
+          <div className={css.appBarWrapper}>
+            <NavLink to="/">
+              Keep<span>in</span>Touch
+              <TiContacts />
+            </NavLink>
+            <Navigation />
+            {isLoggedIn ? <UserMenu /> : <AuthNav />}
+          </div>
+        </nav>
       </Container>
     </header>
   );

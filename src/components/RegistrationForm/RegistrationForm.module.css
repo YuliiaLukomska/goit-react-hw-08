@@ -1,11 +1,13 @@
 .formWrapper {
-  max-width: 320px;
   width: 100%;
-  border: black solid 1px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-  padding: 8px;
+  padding: 30px;
   margin: 0 auto;
-  margin-bottom: 15px;
+  background-color: black;
+  @media (768px<=width) {
+    width: 550px;
+  }
 }
 .formLabel {
   display: flex;
@@ -13,11 +15,107 @@
   margin-bottom: 10px;
 }
 .formBtn {
-  display: block;
-  margin: 0 auto;
-  height: 30px;
-  border: black solid 1px;
+  border-radius: 12px;
+  background: white;
+  margin-bottom: 20px;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: uppercase;
+  display: flex;
+  width: 100%;
+  max-width: 335px;
+  padding: 10px 10px;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  @media (768px<=width) {
+    display: inline-flex;
+
+    width: 479px;
+    max-width: 479px;
+    height: 60px;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+}
+
+.formBtn:hover {
+  background-color: gray;
 }
 .error {
   color: red;
+}
+
+.signUpTitle {
+  font-size: 28px;
+  line-height: 1.14;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #fff;
+  @media (768px<=width) {
+    font-size: 48px;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+  }
+}
+.signUpParagraph {
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+  max-width: 295px;
+  color: #fff;
+  @media (768px<=width) {
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    width: 480px;
+    max-width: 480px;
+    margin-bottom: 26px;
+  }
+}
+.formInput {
+  width: 100%;
+  max-width: 335px;
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  margin-bottom: 8px;
+  padding: 14px 10px 14px 18px;
+  line-height: 1.25;
+  color: #fff;
+  @media (768px<=width) {
+    width: 480px;
+    max-width: 480px;
+    height: 60px;
+    flex-shrink: 0;
+    margin-bottom: 14px;
+  }
+}
+
+.formClarificationParagraph {
+  color: #ffffff80;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33;
+  max-width: 335px;
+  font-style: normal;
+  text-align: center;
+
+  @media (768px<=width) {
+    color: #ffffff80;
+    font-size: 14px;
+    line-height: 1.28;
+    width: 480px;
+    max-width: 480px;
+    height: 36px;
+  }
+}
+.logInSpan {
+  text-decoration: underline;
 }
