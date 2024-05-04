@@ -1,7 +1,7 @@
 .homeSection {
-  padding: 180px 0;
-  background-color: #2e2f42;
   padding: 72px 0;
+  background-color: #2e2f42;
+
   background-image: linear-gradient(
       to bottom,
       rgba(46, 47, 66, 0.7),
@@ -24,6 +24,7 @@
   }
 
   @media (768px<=width) {
+    padding: 180px 0;
     max-width: 768px;
     background-image: linear-gradient(
         to bottom,
@@ -43,6 +44,7 @@
   }
 
   @media (1440px <= width) {
+    padding: 260px 0;
     max-width: 1440px;
     background-image: linear-gradient(
         to bottom,

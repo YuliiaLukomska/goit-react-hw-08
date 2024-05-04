@@ -12,7 +12,7 @@ const Home = () => {
       <DocumentTitle>Welcome Page</DocumentTitle>
       <div className={css.homeSection}>
         <h1 className={css.title}>
-          Contacts manager welcome page
+          Manage your contacts and keep in touch with your people!
           <span role="img" aria-label="Greeting icon">
             💁‍♀️
           </span>
