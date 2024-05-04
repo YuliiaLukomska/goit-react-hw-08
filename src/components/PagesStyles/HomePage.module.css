@@ -72,6 +72,14 @@
   text-transform: uppercase;
   margin: 0 auto 30px;
   color: white;
+  @media (768px<=width) {
+    font-size: 40px;
+    max-width: 520px;
+  }
+  @media (1440px<=width) {
+    font-size: 48px;
+    max-width: 620px;
+  }
 }
 
 .text {
@@ -80,4 +88,45 @@
   font-size: 16px;
   margin: 0 auto;
   color: white;
+}
+.usageList {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: black;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 230px;
+  border-radius: 8px;
+  @media (768px<=width) {
+    max-width: 600px;
+    justify-content: flex-start;
+  }
+  @media (1440px <=width) {
+    max-width: 1000px;
+    justify-content: center;
+  }
+}
+
+.usageItem {
+  color: white;
+  padding: 20px;
+
+  max-width: 200px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (1440px <= width) {
+  .usageItem:not(:last-child) {
+    border-right: solid 1px rgba(255, 255, 255, 0.2);
+  }
+}
+
+.homePageIcon {
+  border: solid 1px rgba(255, 255, 255, 0.2);
+  padding: 8px;
+  border-radius: 50px;
+  color: gray;
 }

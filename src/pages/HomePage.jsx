@@ -17,37 +17,27 @@ const Home = () => {
             💁‍♀️
           </span>
         </h1>
-        <p className={css.text}>How to use this application effectively</p>
-        <ul>
-          <li>
-            <p className={css.text}>
-              <MdAccountBox />
-              Create your account
-            </p>
+        <h2 className={css.text}>How to use this application effectively</h2>
+        <ul className={css.usageList}>
+          <li className={css.usageItem}>
+            <MdAccountBox size="36" className={css.homePageIcon} />
+            Create your account.
           </li>
-          <li>
-            <p className={css.text}>
-              <IoPersonAddOutline />
-              Add and save your private contacts
-            </p>
+          <li className={css.usageItem}>
+            <IoPersonAddOutline size="36" className={css.homePageIcon} />
+            Add and save your private contacts.
           </li>
-          <li>
-            <p className={css.text}>
-              <GrEdit />
-              Edit your contacts
-            </p>
+          <li className={css.usageItem}>
+            <GrEdit size="36" className={css.homePageIcon} />
+            Edit your contacts.
           </li>
-          <li>
-            <p className={css.text}>
-              <RiFilter2Fill />
-              Use the filter to make your search easier
-            </p>
+          <li className={css.usageItem}>
+            <RiFilter2Fill size="36" className={css.homePageIcon} />
+            Use the filter to make your search easier.
           </li>
-          <li>
-            <p className={css.text}>
-              <RiDeleteBin6Line />
-              Delete contacts if it is necessary
-            </p>
+          <li className={css.usageItem}>
+            <RiDeleteBin6Line size="36" className={css.homePageIcon} />
+            Delete contacts if it is necessary.
           </li>
         </ul>
       </div>
