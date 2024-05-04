@@ -72,7 +72,7 @@
   letter-spacing: 0.02em;
   max-width: 220px;
   text-transform: uppercase;
-  margin: 0 auto 30px;
+  margin: 0 auto 50px;
   color: white;
   @media (768px<=width) {
     font-size: 40px;
@@ -83,7 +83,18 @@
     max-width: 620px;
   }
 }
-
+.visuallyHidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
 .text {
   text-align: center;
   /* max-width: 250px; */

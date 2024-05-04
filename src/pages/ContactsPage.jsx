@@ -6,6 +6,7 @@ import { fetchContacts } from "../redux/contacts/operations";
 import SearchBox from "../components/SearchBox/SearchBox";
 import DocumentTitle from "../DocumentTitle";
 import Section from "../components/Section/Section";
+import css from "../components/Styles/ContactsPage.module.css";
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -17,10 +18,16 @@ const Contacts = () => {
   return (
     <Section>
       <DocumentTitle>Your contacts</DocumentTitle>
-      <h1>Your contacts</h1>
-      <SearchBox />
-      <ContactForm />
-      <ContactList />
+      <h2 className={css.contactsPageTitle}>
+        Generate and control your contacts conveniently!
+      </h2>
+      <div className={css.contactsPageWrapper}>
+        <ContactForm />
+        <div className={css.contactsWrapper}>
+          <SearchBox />
+          <ContactList />
+        </div>
+      </div>
     </Section>
   );
 };

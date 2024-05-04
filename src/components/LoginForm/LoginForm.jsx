@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import css from "./LoginForm.module.css";
+import css from "../Styles/Form.module.css";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/auth/operations";
 
@@ -27,32 +27,51 @@ const LoginForm = () => {
   };
 
   return (
-    <Formik
-      initialValues={INITIAL_FORM_DATA}
-      onSubmit={handleSubmit}
-      validationSchema={UserLoginSchema}
-    >
-      <Form className={css.formWrapper}>
-        <label className={css.formLabel}>
-          Email
-          <Field name="email" type="text" />
-          <ErrorMessage name="email" component="span" className={css.error} />
-        </label>
-        <label className={css.formLabel}>
-          Password
-          <Field name="password" type="password" />
-          <ErrorMessage
-            name="password"
-            component="span"
-            className={css.error}
-          />
-        </label>
+    <div className={css.formWrapper}>
+      <h2 className={css.formTitle}>Log In</h2>
+      <p className={css.formParagraph}>
+        Enter your account to enjoy all the services!
+      </p>
+      <Formik
+        initialValues={INITIAL_FORM_DATA}
+        onSubmit={handleSubmit}
+        validationSchema={UserLoginSchema}
+      >
+        <Form>
+          <label className={css.formLabel}>
+            <Field
+              name="email"
+              type="text"
+              className={css.formInput}
+              placeholder="Enter your email"
+            />
+            <ErrorMessage name="email" component="span" className={css.error} />
+          </label>
+          <label className={css.formLabel}>
+            <Field
+              name="password"
+              type="password"
+              className={css.formInput}
+              placeholder="Enter your password"
+            />
+            <ErrorMessage
+              name="password"
+              component="span"
+              className={css.error}
+            />
+          </label>
 
-        <button className={css.formBtn} type="submit">
-          Log In
-        </button>
-      </Form>
-    </Formik>
+          <button
+            className={css.formBtn}
+            type="submit"
+            title="Click to log in"
+            aria-label="Log in"
+          >
+            Enter an account
+          </button>
+        </Form>
+      </Formik>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import css from "./RegistrationForm.module.css";
+import css from "../Styles/Form.module.css";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import { NavLink } from "react-router-dom";
@@ -34,8 +34,8 @@ const RegistrationForm = () => {
 
   return (
     <div className={css.formWrapper}>
-      <h2 className={css.signUpTitle}>Sign Up</h2>
-      <p className={css.signUpParagraph}>
+      <h2 className={css.formTitle}>Sign Up</h2>
+      <p className={css.formParagraph}>
         Create an account to enjoy all the services!
       </p>
       <Formik
@@ -76,8 +76,13 @@ const RegistrationForm = () => {
             />
           </label>
 
-          <button className={css.formBtn} type="submit">
-            Create Account
+          <button
+            className={css.formBtn}
+            type="submit"
+            title="Click to create new account"
+            aria-label="Sign up"
+          >
+            Create an account
           </button>
         </Form>
       </Formik>

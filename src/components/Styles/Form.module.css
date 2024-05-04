@@ -48,7 +48,7 @@
   color: red;
 }
 
-.signUpTitle {
+.formTitle {
   font-size: 28px;
   line-height: 1.14;
   letter-spacing: -0.04em;
@@ -62,7 +62,7 @@
     margin-bottom: 20px;
   }
 }
-.signUpParagraph {
+.formParagraph {
   font-size: 14px;
   line-height: 1.28;
   letter-spacing: -0.02em;

@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import css from "./ContactForm.module.css";
+import css from "../Styles/Form.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 import toast, { Toaster } from "react-hot-toast";
@@ -50,37 +50,55 @@ const ContactForm = () => {
           },
         }}
       />
-      <Formik
-        initialValues={INITIAL_FORM_DATA}
-        onSubmit={handleSubmit}
-        validationSchema={ContactSchema}
-      >
-        <Form className={css.formWrapper}>
-          <label className={css.formLabel}>
-            Name
-            <Field name="name" type="text" placeholder="Maria Moroz" />
-            <ErrorMessage name="name" component="span" className={css.error} />
-          </label>
-          <label className={css.formLabel}>
-            Number
-            <Field name="number" type="text" placeholder="+(380)631234567" />
-            <ErrorMessage
-              name="number"
-              component="span"
-              className={css.error}
-            />
-          </label>
+      <div className={css.formWrapper}>
+        <h3 className={css.formTitle}>Create new contact</h3>
+        <p className={css.formParagraph}>
+          Fill this form using following examples!
+        </p>
+        <Formik
+          initialValues={INITIAL_FORM_DATA}
+          onSubmit={handleSubmit}
+          validationSchema={ContactSchema}
+        >
+          <Form>
+            <label className={css.formLabel}>
+              <Field
+                name="name"
+                type="text"
+                placeholder="Maria Moroz"
+                className={css.formInput}
+              />
+              <ErrorMessage
+                name="name"
+                component="span"
+                className={css.error}
+              />
+            </label>
+            <label className={css.formLabel}>
+              <Field
+                name="number"
+                type="text"
+                placeholder="+(380)631234567"
+                className={css.formInput}
+              />
+              <ErrorMessage
+                name="number"
+                component="span"
+                className={css.error}
+              />
+            </label>
 
-          <button
-            className={css.formBtn}
-            type="submit"
-            title="Click to create new contact"
-            aria-label="Add new contact"
-          >
-            Add new contact
-          </button>
-        </Form>
-      </Formik>
+            <button
+              className={css.formBtn}
+              type="submit"
+              title="Click to create new contact"
+              aria-label="Add new contact"
+            >
+              Add new contact
+            </button>
+          </Form>
+        </Formik>
+      </div>
     </>
   );
 };
