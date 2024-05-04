@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import css from "../Styles/Form.module.css";
+import style from "./ContactForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 import toast, { Toaster } from "react-hot-toast";
@@ -50,7 +51,7 @@ const ContactForm = () => {
           },
         }}
       />
-      <div className={css.formWrapper}>
+      <div className={style.formWrapper}>
         <h3 className={css.formTitle}>Create new contact</h3>
         <p className={css.formParagraph}>
           Fill this form using following examples!
