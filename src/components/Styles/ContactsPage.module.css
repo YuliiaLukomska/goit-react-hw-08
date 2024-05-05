@@ -1,16 +1,27 @@
 .contactsPageWrapper {
   display: flex;
   flex-direction: column;
-  /* align-items: flex-start; */
+  @media (1440px<=width) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 }
-/* .contactsWrapper {
-} */
 
 .contactsPageTitle {
+  text-transform: uppercase;
+  color: white;
   margin: 0 auto 30px;
   text-align: center;
   font-size: 30px;
   line-height: 1.14;
   letter-spacing: -0.04em;
   font-weight: 600;
+  @media (768px<=width) {
+    font-size: 40px;
+  }
+  @media (1440px<=width) {
+    font-size: 48px;
+    margin: 0 auto 50px;
+  }
 }

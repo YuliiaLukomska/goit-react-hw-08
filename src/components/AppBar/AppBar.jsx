@@ -17,8 +17,10 @@ const AppBar = () => {
         <nav>
           <div className={css.appBarWrapper}>
             <NavLink to="/">
-              Keep<span>in</span>Touch
-              <TiContacts />
+              <div className={css.logoWrapper}>
+                Keep<span>in</span>Touch
+                <TiContacts size="24" />
+              </div>
             </NavLink>
             <Navigation />
             {isLoggedIn ? <UserMenu /> : <AuthNav />}

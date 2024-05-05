@@ -3,11 +3,12 @@
   gap: 20px;
 }
 .userMenuWelcome {
-  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
-.userMenuUserName {
-  color: indianred;
-}
+
 .logOutButton {
   background-color: gainsboro;
   display: flex;

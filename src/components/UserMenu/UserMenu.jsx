@@ -3,6 +3,7 @@ import { selectUser } from "../../redux/auth/selectors";
 import { logout } from "../../redux/auth/operations";
 import css from "./UserMenu.module.css";
 import { IoIosLogOut } from "react-icons/io";
+import { VscAccount } from "react-icons/vsc";
 
 const UserMenu = () => {
   const user = useSelector(selectUser);
@@ -14,7 +15,7 @@ const UserMenu = () => {
   return (
     <div className={css.userMenuWrapper}>
       <p className={css.userMenuWelcome}>
-        Welcome, <span className={css.userMenuUserName}>{user.name}</span> !
+        <VscAccount size="24" /> {user.name}
       </p>
       <button onClick={onLogOut} type="button" className={css.logOutButton}>
         <IoIosLogOut size="24px" />

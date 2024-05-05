@@ -29,10 +29,10 @@
   padding: 10px 10px;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   @media (768px<=width) {
     display: inline-flex;
-
     width: 479px;
     max-width: 479px;
     height: 60px;
@@ -43,6 +43,7 @@
 
 .formBtn:hover {
   background-color: gray;
+  color: #fff;
 }
 .error {
   color: red;

@@ -2,7 +2,7 @@
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-  padding: 10px;
+  padding: 14px;
   margin: 0 auto 30px;
   background-color: black;
   @media (768px<=width) {
@@ -14,7 +14,7 @@
   font-size: 14px;
   line-height: 1.28;
   letter-spacing: -0.02em;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   max-width: 295px;
   color: #fff;
   @media (768px<=width) {
@@ -23,26 +23,27 @@
     letter-spacing: -0.02em;
     width: 480px;
     max-width: 480px;
-    margin-bottom: 26px;
+    margin-bottom: 14px;
+  }
+  @media (1440px<=width) {
+    font-size: 18px;
   }
 }
 
 .filterInput {
   width: 100%;
   max-width: 335px;
-  height: 46px;
+  height: 36px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: transparent;
-  margin-bottom: 8px;
   padding: 14px 10px 14px 18px;
   line-height: 1.25;
   color: #fff;
   @media (768px<=width) {
-    width: 480px;
-    max-width: 480px;
-    height: 60px;
+    width: 520px;
+    max-width: 520px;
+    height: 45px;
     flex-shrink: 0;
-    margin-bottom: 14px;
   }
 }
