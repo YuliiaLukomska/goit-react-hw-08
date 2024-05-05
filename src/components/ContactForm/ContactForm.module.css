@@ -10,6 +10,5 @@
     width: 550px;
   }
   @media (1440px<=width) {
-    /* height: 450px; */
   }
 }
