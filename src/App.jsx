@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { lazy, useEffect } from "react";
 import Layout from "./Layout";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { refreshUser } from "./redux/auth/operations";
 import { selectIsRefreshing } from "./redux/auth/selectors";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
@@ -55,6 +55,7 @@ function App() {
             <PrivateRoute component={<ContactsPage />} redirectTo="/login" />
           }
         />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Layout>
   );

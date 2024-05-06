@@ -15,16 +15,20 @@ const AppBar = () => {
     <header className={css.header}>
       <Container>
         <nav>
-          <div className={css.appBarWrapper}>
-            <NavLink to="/">
-              <div className={css.logoWrapper}>
-                Keep<span>in</span>Touch
-                <TiContacts size="24" />
-              </div>
-            </NavLink>
-            <Navigation />
-            {isLoggedIn ? <UserMenu /> : <AuthNav />}
-          </div>
+          <ul className={css.appBarWrapper}>
+            <li>
+              <NavLink to="/">
+                <div className={css.logoWrapper}>
+                  Keep<span>in</span>Touch
+                  <TiContacts size="24" />
+                </div>
+              </NavLink>
+            </li>
+            <li>
+              <Navigation />
+            </li>
+            <li>{isLoggedIn ? <UserMenu /> : <AuthNav />}</li>
+          </ul>
         </nav>
       </Container>
     </header>
