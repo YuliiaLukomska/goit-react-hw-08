@@ -3,3 +3,14 @@
   gap: 20px;
   font-size: 20px;
 }
+.active {
+  color: gray;
+  text-decoration-line: underline;
+}
+
+.authLink {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.authLink:hover {
+  color: gray;
+}
