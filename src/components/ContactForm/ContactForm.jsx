@@ -1,7 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import css from "../Styles/Form.module.css";
-import style from "./ContactForm.module.css";
+import css from "./ContactForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
 import toast, { Toaster } from "react-hot-toast";
@@ -51,7 +50,7 @@ const ContactForm = () => {
           },
         }}
       />
-      <div className={style.formWrapper}>
+      <div className={css.formWrapper}>
         <h3 className={css.formTitle}>Create new contact</h3>
         <p className={css.formParagraph}>
           Fill this form using following examples!
@@ -62,32 +61,33 @@ const ContactForm = () => {
           validationSchema={ContactSchema}
         >
           <Form>
-            <label className={css.formLabel}>
-              <Field
-                name="name"
-                type="text"
-                placeholder="Maria Moroz"
-                className={css.formInput}
-              />
-              <ErrorMessage
-                name="name"
-                component="span"
-                className={css.error}
-              />
+            <label className={css.visuallyHidden} htmlFor="username">
+              Name
             </label>
-            <label className={css.formLabel}>
-              <Field
-                name="number"
-                type="text"
-                placeholder="+(380)631234567"
-                className={css.formInput}
-              />
-              <ErrorMessage
-                name="number"
-                component="span"
-                className={css.error}
-              />
+            <Field
+              id="username"
+              name="name"
+              type="text"
+              placeholder="Maria Moroz"
+              className={css.formInput}
+            />
+            <ErrorMessage name="name" component="span" className={css.error} />
+
+            <label className={css.visuallyHidden} htmlFor="number">
+              Number
             </label>
+            <Field
+              id="number"
+              name="number"
+              type="text"
+              placeholder="+(380)631234567"
+              className={css.formInput}
+            />
+            <ErrorMessage
+              name="number"
+              component="span"
+              className={css.error}
+            />
 
             <button
               className={css.formBtn}

@@ -21,43 +21,38 @@ const EditContactForm = ({ name, number, contactId, onClose }) => {
   };
 
   return (
-    <Formik
-      initialValues={initialFormData}
-      onSubmit={handleSubmit}
-      validationSchema={ContactSchema}
-    >
-      <Form className={css.formWrapper}>
-        <label className={css.formLabel}>
-          Name
-          <Field
-            name="name"
-            type="text"
-            placeholder="Maria Moroz"
-            className={css.formInput}
-          />
-          <ErrorMessage name="name" component="span" className={css.error} />
-        </label>
-        <label className={css.formLabel}>
-          Number
-          <Field
-            name="number"
-            type="text"
-            placeholder="+(380)631234567"
-            className={css.formInput}
-          />
-          <ErrorMessage name="number" component="span" className={css.error} />
-        </label>
+    <div className={css.formWrapper}>
+      <p className={css.formParagraph}>Enter new data to edit your contact</p>
+      <Formik
+        initialValues={initialFormData}
+        onSubmit={handleSubmit}
+        validationSchema={ContactSchema}
+      >
+        <Form>
+          <label>
+            <Field name="name" type="text" className={css.formInput} />
+            <ErrorMessage name="name" component="span" className={css.error} />
+          </label>
+          <label>
+            <Field name="number" type="text" className={css.formInput} />
+            <ErrorMessage
+              name="number"
+              component="span"
+              className={css.error}
+            />
+          </label>
 
-        <button
-          className={css.formBtn}
-          type="submit"
-          title="Click to edit your contact"
-          aria-label="Edit your contact"
-        >
-          Edit contact
-        </button>
-      </Form>
-    </Formik>
+          <button
+            className={css.formBtn}
+            type="submit"
+            title="Click to edit your contact"
+            aria-label="Edit your contact"
+          >
+            Edit contact
+          </button>
+        </Form>
+      </Formik>
+    </div>
   );
 };
 

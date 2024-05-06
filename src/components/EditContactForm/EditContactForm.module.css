@@ -1,37 +1,81 @@
 .formWrapper {
-  max-width: 320px;
   width: 100%;
-  border: black solid 1px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-  padding: 8px;
-  margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 30px;
+  background-color: black;
+
+  @media (768px<=width) {
+    width: 400px;
+  }
 }
-.formLabel {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-}
+
 .formBtn {
-  width: 100px;
-  height: 40px;
-  background-color: #ff6700;
-  border-radius: 8px;
+  border-radius: 12px;
+  background: white;
+  color: black;
   font-size: 16px;
-  color: #fff;
-  filter: drop-shadow(0 0 7px rgba(255, 103, 0, 0.3));
-  transition: background-color 0.3s;
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: uppercase;
+  display: flex;
+  width: 100%;
+  max-width: 335px;
+  padding: 10px 10px;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  @media (768px<=width) {
+    display: inline-flex;
+    width: 340px;
+    max-width: 340px;
+    height: 60px;
+    font-size: 18px;
+    line-height: 1.55;
+  }
 }
 
 .formBtn:hover {
-  background-color: #c24e00;
+  background-color: gray;
+  color: #fff;
 }
+
+.formParagraph {
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+
+  color: #fff;
+  @media (768px<=width) {
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 26px;
+  }
+}
+
+.formInput {
+  width: 100%;
+  max-width: 335px;
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  margin-bottom: 8px;
+  padding: 14px 10px 14px 18px;
+  line-height: 1.25;
+  color: #fff;
+  @media (768px<=width) {
+    width: 340px;
+    max-width: 340px;
+    height: 60px;
+    flex-shrink: 0;
+    margin-bottom: 14px;
+  }
+}
+
 .error {
   color: red;
-}
-.formInput {
-  padding: 10px;
-  width: 280px;
 }

@@ -28,7 +28,7 @@
   padding: 60px 20px 30px 20px;
   background-color: white;
   border-radius: 30px;
-  filter: drop-shadow(0 0 10px rgba(255, 103, 0, 0.7));
+  filter: drop-shadow(0 0 10px rgba(229, 224, 220, 0.7));
   transform: translateY(50px);
   transition: transform 0.3s;
 }

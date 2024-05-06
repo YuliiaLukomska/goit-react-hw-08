@@ -44,37 +44,45 @@ const RegistrationForm = () => {
         validationSchema={UserRegisterSchema}
       >
         <Form>
-          <label className={css.formLabel}>
-            <Field
-              name="name"
-              type="text"
-              placeholder="Enter your name"
-              className={css.formInput}
-            />
-            <ErrorMessage name="name" component="span" className={css.error} />
+          <label className={css.visuallyHidden} htmlFor="name">
+            Name
           </label>
-          <label className={css.formLabel}>
-            <Field
-              name="email"
-              type="text"
-              placeholder="Enter your email"
-              className={css.formInput}
-            />
-            <ErrorMessage name="email" component="span" className={css.error} />
+          <Field
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Enter your name"
+            className={css.formInput}
+          />
+          <ErrorMessage name="name" component="span" className={css.error} />
+
+          <label className={css.visuallyHidden} htmlFor="email">
+            Email
           </label>
-          <label className={css.formLabel}>
-            <Field
-              name="password"
-              type="password"
-              placeholder="Password"
-              className={css.formInput}
-            />
-            <ErrorMessage
-              name="password"
-              component="span"
-              className={css.error}
-            />
+          <Field
+            id="email"
+            name="email"
+            type="text"
+            placeholder="Enter your email"
+            className={css.formInput}
+          />
+          <ErrorMessage name="email" component="span" className={css.error} />
+
+          <label className={css.visuallyHidden} htmlFor="password">
+            Password
           </label>
+          <Field
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Password"
+            className={css.formInput}
+          />
+          <ErrorMessage
+            name="password"
+            component="span"
+            className={css.error}
+          />
 
           <button
             className={css.formBtn}

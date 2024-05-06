@@ -38,28 +38,33 @@ const LoginForm = () => {
         validationSchema={UserLoginSchema}
       >
         <Form>
-          <label className={css.formLabel}>
-            <Field
-              name="email"
-              type="text"
-              className={css.formInput}
-              placeholder="Enter your email"
-            />
-            <ErrorMessage name="email" component="span" className={css.error} />
+          <label className={css.visuallyHidden} htmlFor="email">
+            Email
           </label>
-          <label className={css.formLabel}>
-            <Field
-              name="password"
-              type="password"
-              className={css.formInput}
-              placeholder="Enter your password"
-            />
-            <ErrorMessage
-              name="password"
-              component="span"
-              className={css.error}
-            />
+          <Field
+            id="email"
+            name="email"
+            type="text"
+            className={css.formInput}
+            placeholder="Enter your email"
+          />
+          <ErrorMessage name="email" component="span" className={css.error} />
+
+          <label className={css.visuallyHidden} htmlFor="password">
+            Password
           </label>
+          <Field
+            id="password"
+            name="password"
+            type="password"
+            className={css.formInput}
+            placeholder="Enter your password"
+          />
+          <ErrorMessage
+            name="password"
+            component="span"
+            className={css.error}
+          />
 
           <button
             className={css.formBtn}

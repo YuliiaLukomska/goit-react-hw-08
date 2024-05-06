@@ -28,7 +28,7 @@
   padding: 60px 20px 30px 20px;
   background-color: white;
   border-radius: 30px;
-  filter: drop-shadow(0 0 10px rgba(255, 103, 0, 0.7));
+  filter: drop-shadow(0 0 10px rgba(221, 215, 212, 0.7));
   transform: translateY(50px);
   transition: transform 0.3s;
 }
@@ -63,14 +63,14 @@
 .modalButton {
   width: 100px;
   height: 40px;
-  background-color: #ff6700;
+  background-color: gray;
   border-radius: 8px;
   font-size: 16px;
   color: #fff;
-  filter: drop-shadow(0 0 7px rgba(255, 103, 0, 0.3));
+  filter: drop-shadow(0 0 7px rgba(195, 189, 185, 0.3));
   transition: background-color 0.3s;
 }
 
 .modalButton:hover {
-  background-color: #c24e00;
+  background-color: black;
 }

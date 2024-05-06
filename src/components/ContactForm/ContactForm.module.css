@@ -9,6 +9,105 @@
   @media (768px<=width) {
     width: 550px;
   }
-  @media (1440px<=width) {
+}
+
+.formTitle {
+  font-size: 28px;
+  line-height: 1.14;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #fff;
+  @media (768px<=width) {
+    font-size: 34px;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
   }
+}
+
+.formParagraph {
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
+  max-width: 295px;
+  color: #fff;
+  @media (768px<=width) {
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    width: 480px;
+    max-width: 480px;
+    margin-bottom: 26px;
+  }
+}
+
+.formInput {
+  width: 100%;
+  max-width: 335px;
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  margin-bottom: 8px;
+  padding: 14px 10px 14px 18px;
+  line-height: 1.25;
+  color: #fff;
+  @media (768px<=width) {
+    width: 480px;
+    max-width: 480px;
+    height: 60px;
+    flex-shrink: 0;
+    margin-bottom: 14px;
+  }
+}
+
+.formBtn {
+  border-radius: 12px;
+  background: white;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-transform: uppercase;
+  display: flex;
+  width: 100%;
+  max-width: 335px;
+  padding: 10px 10px;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  @media (768px<=width) {
+    display: inline-flex;
+    width: 479px;
+    max-width: 479px;
+    height: 60px;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+}
+
+.formBtn:hover {
+  background-color: gray;
+  color: #fff;
+}
+.formLabel {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.visuallyHidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
