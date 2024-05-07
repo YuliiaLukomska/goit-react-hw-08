@@ -18,7 +18,7 @@ const UserMenu = () => {
         <VscAccount size="24" /> {user.name}
       </p>
       <button onClick={onLogOut} type="button" className={css.logOutButton}>
-        <IoIosLogOut size="24px" />
+        <IoIosLogOut size="24px" className={css.exitIcon} />
       </button>
     </div>
   );

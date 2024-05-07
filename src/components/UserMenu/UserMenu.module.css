@@ -15,3 +15,10 @@
   align-items: center;
   justify-content: center;
 }
+
+.exitIcon {
+  transition: color 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.exitIcon:hover {
+  color: gray;
+}

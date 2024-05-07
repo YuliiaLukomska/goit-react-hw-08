@@ -11,6 +11,7 @@ const HomePage = lazy(() => import("./pages/HomePage"));
 const RegistrationPage = lazy(() => import("./pages/RegistrationPage"));
 const LoginPage = lazy(() => import("./pages/LoginPage"));
 const ContactsPage = lazy(() => import("./pages/ContactsPage"));
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 /**Виходить, що неавторизованому користувачу будуть доступні всі маршрути, окрім КонтактсПейдж - ці маршрути будуть публічними,
  * а КонтактсПейдж буде приватним маршрутом. Але сторінки Реєстрації та Логінізвції мають обмеження (Викор RestrictedRoute) -
@@ -55,7 +56,7 @@ function App() {
             <PrivateRoute component={<ContactsPage />} redirectTo="/login" />
           }
         />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Layout>
   );

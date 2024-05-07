@@ -13,9 +13,6 @@ const Home = () => {
       <div className={css.homeSection}>
         <h1 className={css.title}>
           Manage your contacts and keep in touch with your people easily!
-          <span role="img" aria-label="Greeting icon">
-            💁‍♀️
-          </span>
         </h1>
         <h2 className={css.visuallyHidden}>
           How to use this application effectively
