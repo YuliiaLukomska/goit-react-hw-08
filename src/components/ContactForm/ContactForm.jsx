@@ -8,12 +8,12 @@ import { selectContacts } from "../../redux/contacts/selectors";
 
 export const ContactSchema = Yup.object().shape({
   name: Yup.string()
-    .min(3, "Too Short!")
-    .max(50, "Too Long")
+    .min(3, "Too short!")
+    .max(50, "Too long")
     .required("Name is required!"),
   number: Yup.string()
-    .min(3, "Too Short!")
-    .max(50, "Too Long")
+    .min(3, "Too short!")
+    .max(20, "Too long")
     .required("Number is required!"),
 });
 
